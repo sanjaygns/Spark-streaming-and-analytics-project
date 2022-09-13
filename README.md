@@ -17,23 +17,29 @@ Utility_function_with_formula_for_ agg_time_country()
 
 Write_to_console()
 
-2. Utility
-UTILITY FUNCTIONS
+
+2. UTILITY FUNCTIONS
+
 total_item_count: to sum up quantity of items ordered for each invoice
 total_cost: get total cost using  quantity * unit_price for each invoice
 is_a_order: return 1 if type is ORDER else 0
 is_a_return: return 1 if type is RETURN else 0
 
 3. Streams
+
 order_stream: Input Stream [ Raw data]
 order_extended_stream – is the stream with the derived columns added to the raw data.
 agg_time : Calculated the time-based KPIs with tumbling window of one minute on orders across the globe.
 agg_time_country: Calculated the time and country-based KPIs with tumbling window of one minute on orders across the globe.
 
+
 4. Command
+
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.5 spark-streaming.py
 
+
 5. Output directory
+
 [hadoop@ip-172-31-57-4 ~]$ hadoop fs -ls time_countryKPI/
 Found 7 items
 drwxr-xr-x - hadoop hadoop 0 2022-09-12 18:07 time_countryKPI/_spark_metadata
@@ -55,7 +61,10 @@ drwxr-xr-x - hadoop hadoop 0 2022-09-12 18:04 timeKPI/cp
 -rw-r--r-- 1 hadoop hadoop 177 2022-09-12 18:08 timeKPI/part-00097-e122d6f2-7065-42a4-91db-c2b924570db9-c000.json
 [hadoop@ip-172-31-57-4 ~]$ hadoop fs -cat time_countryKPI/part-00013-05660512-c8d7-491f-9462-cdd74297d014-c000.json
 {"start":"2022-09-12T17:59:00.000Z","end":"2022-09-12T18:00:00.000Z","country":"France","OPM":1,"total_volume_of_sales":1.4500000476837158,"rate_of_return":0.0}
+
+
 6. Console Output
+
 [hadoop@ip-172-31-57-4 ~]$ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.5 spark-streaming.py
 Ivy Default Cache set to: /home/hadoop/.ivy2/cache
 The jars for the packages stored in: /home/hadoop/.ivy2/jars
