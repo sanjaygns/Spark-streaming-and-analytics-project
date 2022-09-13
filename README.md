@@ -4,6 +4,7 @@ Code Logic - Retail Data Analysis
 In this document, you will describe the code and the overall steps taken to solve the project.
 
 1. Logic
+
 Start_spark_session()
 
 Read_raw_data_from_kafka_topic()
