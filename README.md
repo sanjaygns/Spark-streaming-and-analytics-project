@@ -5,10 +5,15 @@ In this document, you will describe the code and the overall steps taken to solv
 
 1. Logic
 Start_spark_session()
+
 Read_raw_data_from_kafka_topic()
+
 Format_raw_data_to_json_data()
+
 Utility_function_with_formula_for_agg_time()
+
 Utility_function_with_formula_for_ agg_time_country()
+
 Write_to_console()
 
 2. Utility
